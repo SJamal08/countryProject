@@ -73,4 +73,23 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  public filterById(): void {
+    this.countries.sort((a, b) => a.id - b.id);
+  }
+
+  public filterByName(): void {
+    this.countries.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  public filterByArea(): void {
+    this.countries.sort((a, b) => a.area - b.area);
+  }
+
+  public filterByPIB(): void {
+    this.countries.sort((a, b) => a.pib - b.pib);
+  }
+  public filterByContinent(): void {
+    this.countries.sort((a, b) => a.continent.localeCompare(b.continent));
+  }
+
 }

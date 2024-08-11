@@ -8,17 +8,17 @@
   <table class="min-w-full bg-white border border-gray-300">
     <thead>
       <tr>
-        <th class="py-2 px-4 border-b">ID</th>
-        <th class="py-2 px-4 border-b">Nom</th>
-        <th class="py-2 px-4 border-b">Superficie</th>
-        <th class="py-2 px-4 border-b">Continent</th>
-        <th class="py-2 px-4 border-b">PIB</th>
+        <th (click)="filterById()" class="py-2 px-4 border-b cursor-pointer">ID</th>
+        <th (click)="filterByName()" class="py-2 px-4 border-b cursor-pointer">Nom</th>
+        <th (click)="filterByArea()" class="py-2 px-4 border-b cursor-pointer">Superficie</th>
+        <th (click)="filterByContinent()" class="py-2 px-4 border-b cursor-pointer">Continent</th>
+        <th (click)="filterByPIB()" class="py-2 px-4 border-b cursor-pointer">PIB</th>
         <th class="py-2 px-4 border-b">Image</th>
         <th class="py-2 px-4 border-b">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let country of countries">
+      <tr *ngFor="let country of countries" class="cursor-pointer">
         <td class="py-2 px-4 border-b">{{ country.id }}</td>
         <td class="py-2 px-4 border-b">{{ country.name }}</td>
         <td class="py-2 px-4 border-b">{{ country.area}}</td>
