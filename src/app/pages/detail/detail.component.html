@@ -1,0 +1,23 @@
+<div class="bg-blue-600 p-4 flex justify-between items-center">
+  <h1 class="text-white text-2xl">{{ country?.name || 'Détail du Pays' }}</h1>
+  <button (click)="goBack()" class="bg-gray-100 text-black py-2 px-4 rounded">Retour</button>
+</div>
+
+<div *ngIf="country; else notFound" class="p-6 flex">
+  <div class="w-1/2">
+    <p><strong>Area:</strong> {{ country.area }} km²</p>
+    <p><strong>Continent:</strong> {{ country.continent }}</p>
+    <p><strong>PIB:</strong> {{ country.pib }} $</p>
+  </div>
+
+  <div class="w-1/2 flex justify-center items-center">
+    <img [src]="country.img" alt="{{ country.name }}" class="w-64 h-64 object-cover rounded">
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="p-6">
+    <h2 class="text-red-500 text-xl font-bold">Pays introuvable</h2>
+    <p>Le pays que vous recherchez n'existe pas ou a été supprimé.</p>
+  </div>
+</ng-template>

@@ -20,6 +20,11 @@ export class CountryService {
   async getAll(): Promise<Country[]> {
     return await this.countryRepo.getAll();
   }
+
+  async getById(id: number): Promise<Country | null> {
+    return await this.countryRepo.getById(id);
+  }
+
   async update(id: number, country: CountryPayload): Promise<Country | undefined> {
     return await this.countryRepo.update(id, country);
   }

@@ -4,6 +4,7 @@ import { Country, CountryPayload } from '../../model/Country';
 import { CountryService } from '../../service/countryService/country-service.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { EditModalComponent } from '../../components/edit-modal/edit-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,9 +20,13 @@ export class HomeComponent implements OnInit {
   public selectedCountry: Country | null = null;
   public isModalOpen = false;
 
-  constructor(private countryService: CountryService) {}
+  constructor(private countryService: CountryService, private router: Router) {}
   ngOnInit(): void {
     this.getCountries();
+  }
+
+  onCountryClick(country: Country): void {
+    this.router.navigate(['/country', country.id]);
   }
 
   openEditModal(country: Country): void {

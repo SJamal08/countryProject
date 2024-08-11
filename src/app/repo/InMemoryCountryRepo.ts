@@ -55,6 +55,15 @@ export class InMemoryCountryRepo implements ICountryRepo {
   getAll(): Promise<Country[]> {
     return Promise.resolve(this.countries);
   }
+
+  getById(id: number): Promise<Country | null> {
+    const countryToFind = this.countries.find(c => c.id === id);
+    if (countryToFind === undefined) {
+      return Promise.resolve(null);
+    }
+    return Promise.resolve(countryToFind);
+  }
+
   update(id: number, country: CountryPayload): Promise<Country | undefined> {
     const countryUpdated = this.countries.find(c => c.id === id);
     if (countryUpdated) {

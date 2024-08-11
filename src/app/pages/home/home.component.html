@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let country of countries" class="cursor-pointer">
+      <tr *ngFor="let country of countries" class="cursor-pointer" (click)="onCountryClick(country)">
         <td class="py-2 px-4 border-b">{{ country.id }}</td>
         <td class="py-2 px-4 border-b">{{ country.name }}</td>
         <td class="py-2 px-4 border-b">{{ country.area}}</td>

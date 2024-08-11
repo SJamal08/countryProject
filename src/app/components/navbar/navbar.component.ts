@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CountryService } from '../../service/countryService/country-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +10,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  public countryService: CountryService;
+
+  constructor(countryService: CountryService) {
+    this.countryService = countryService;
+  }
 
 }
