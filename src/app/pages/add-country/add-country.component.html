@@ -1,0 +1,49 @@
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-4">Ajouter un Pays</h1>
+
+  <form [formGroup]="countryForm" (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700">Nom</label>
+      <input id="name" formControlName="name" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      <div *ngIf="countryForm.controls['name'].invalid && (countryForm.controls['name'].dirty || countryForm.controls['name'].touched)" class="text-red-500 text-sm">
+        Le nom est requis.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="area" class="block text-gray-700">Superficie</label>
+      <input id="area" formControlName="area" type="number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      <div *ngIf="countryForm.controls['area'].invalid && (countryForm.controls['area'].dirty || countryForm.controls['area'].touched)" class="text-red-500 text-sm">
+        La superficie doit être un nombre positif.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="continent" class="block text-gray-700">Continent</label>
+      <input id="continent" formControlName="continent" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      <div *ngIf="countryForm.controls['continent'].invalid && (countryForm.controls['continent'].dirty || countryForm.controls['continent'].touched)" class="text-red-500 text-sm">
+        Le continent est requis.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="pib" class="block text-gray-700">PIB</label>
+      <input id="pib" formControlName="pib" type="number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      <div *ngIf="countryForm.controls['pib'].invalid && (countryForm.controls['pib'].dirty || countryForm.controls['pib'].touched)" class="text-red-500 text-sm">
+        Le PIB doit être un nombre positif.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="img" class="block text-gray-700">Image URL</label>
+      <input id="img" formControlName="img" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      <div *ngIf="countryForm.controls['img'].invalid && (countryForm.controls['img'].dirty || countryForm.controls['img'].touched)" class="text-red-500 text-sm">
+        L'URL de l'image est requise.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="countryForm.invalid" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Ajouter
+    </button>
+  </form>
+</div>

@@ -1,0 +1,52 @@
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <!-- Modal -->
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-lg">
+    <!-- Modal Header -->
+    <div class="flex justify-between items-center p-4 border-b">
+      <h2 class="text-lg font-semibold">Modifier le Pays</h2>
+      <button (click)="onCancel()" class="text-gray-500 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Body -->
+    <form [formGroup]="countryForm" (ngSubmit)="onSave()" class="p-4">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700">Nom</label>
+        <input id="name" formControlName="name" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label for="area" class="block text-gray-700">Superficie</label>
+        <input id="area" formControlName="area" type="number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label for="continent" class="block text-gray-700">Continent</label>
+        <input id="continent" formControlName="continent" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label for="pib" class="block text-gray-700">PIB</label>
+        <input id="pib" formControlName="pib" type="number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label for="img" class="block text-gray-700">Image URL</label>
+        <input id="img" formControlName="img" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+      </div>
+
+      <div class="flex justify-end">
+        <button type="button" (click)="onCancel()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-2">
+          Annuler
+        </button>
+        <button type="submit" [disabled]="countryForm.invalid" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Sauvegarder
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
