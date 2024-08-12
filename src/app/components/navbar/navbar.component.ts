@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CountryService } from '../../service/countryService/country-service.service';
+import { HomeComponent } from '../../pages/home/home.component';
 
 @Component({
   selector: 'app-navbar',
@@ -11,10 +12,11 @@ import { CountryService } from '../../service/countryService/country-service.ser
 })
 export class NavbarComponent {
 
-  public countryService: CountryService;
+  constructor(private homeComponent: HomeComponent) {}
 
-  constructor(countryService: CountryService) {
-    this.countryService = countryService;
+  public async reloadCountries(): Promise<void> {
+    console.log("reloading");
+    await this.homeComponent.getCountries();
   }
 
 }

@@ -12,7 +12,7 @@ export class InMemoryCountryRepo implements ICountryRepo {
         area: 551695,
         continent: 'Europe',
         pib: 2715000000000,
-        img: 'https://example.com/images/france.png'
+        img: 'https://www.countryflags.com/wp-content/uploads/france-flag-png-large.png'
       },
       {
         id: 2,
@@ -20,7 +20,7 @@ export class InMemoryCountryRepo implements ICountryRepo {
         area: 9984670,
         continent: 'North America',
         pib: 1647000000000,
-        img: 'https://example.com/images/canada.png'
+        img: 'https://node01.flagstat.net/media/catalog/product/detail/1818.png'
       },
       {
         id: 3,
@@ -28,7 +28,7 @@ export class InMemoryCountryRepo implements ICountryRepo {
         area: 7692024,
         continent: 'Oceania',
         pib: 1330000000000,
-        img: 'https://example.com/images/australia.png'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Australia.svg/2560px-Flag_of_Australia.svg.png'
       },
       {
         id: 4,
@@ -36,7 +36,7 @@ export class InMemoryCountryRepo implements ICountryRepo {
         area: 377975,
         continent: 'Asia',
         pib: 5371000000000,
-        img: 'https://example.com/images/japan.png'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Japan_flag_-_variant.png/2560px-Japan_flag_-_variant.png'
       },
       {
         id: 5,
@@ -44,7 +44,7 @@ export class InMemoryCountryRepo implements ICountryRepo {
         area: 8515767,
         continent: 'South America',
         pib: 1868000000000,
-        img: 'https://example.com/images/brazil.png'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/1280px-Flag_of_Brazil.svg.png'
       }]
   }
   async create(country: CountryPayload): Promise<Country> {

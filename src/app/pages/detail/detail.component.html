@@ -3,15 +3,15 @@
   <button (click)="goBack()" class="bg-gray-100 text-black py-2 px-4 rounded">Retour</button>
 </div>
 
-<div *ngIf="country; else notFound" class="p-6 flex">
+<div *ngIf="country; else notFound" class="p-6 flex bg-gray-100 h-screen items-start px-52 pt-20">
   <div class="w-1/2">
-    <p><strong>Area:</strong> {{ country.area }} km²</p>
+    <p><strong>Superficie:</strong> {{ country.area }} km²</p>
     <p><strong>Continent:</strong> {{ country.continent }}</p>
     <p><strong>PIB:</strong> {{ country.pib }} $</p>
   </div>
 
   <div class="w-1/2 flex justify-center items-center">
-    <img [src]="country.img" alt="{{ country.name }}" class="w-64 h-64 object-cover rounded">
+    <img [src]="country.img" alt="{{ country.name }}" class="w-80 h-60 object-cover rounded">
   </div>
 </div>
 
